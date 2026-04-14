@@ -1,0 +1,9 @@
+name = "gripstrength-shop"
+compatibility_date = "2026-04-14"
+
+pages_build_output_dir = "."
+
+[vars]
+SHOP_NAME = "GripStrength Shop"
+PREFERRED_URL = "https://grip.bomiko.de"
+FALLBACK_URL = "https://gripstrengthshop.bomiko.de"
