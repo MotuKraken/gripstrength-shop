@@ -38,7 +38,15 @@ Recommendation: `grip.bomiko.de` for elegance, with `gripstrengthshop.bomiko.de`
   - Strength / Combat / Resilience bundles
 
 ## Immediate next steps
-- Create dedicated repo
-- Push code
-- Prepare Cloudflare Pages-compatible static deployment
-- Add product data adapter once Shopify access is stable
+- Connect repo to Cloudflare Pages
+- Move `bomiko.de` DNS off the parked Hostinger state into an active deployment zone
+- Replace mock CTA flow with Shopify buy-button or Storefront API links
+- Add real imagery / reviews / comparison proof
+
+## Phase 2 completed
+- Product data extracted into `catalog.js`
+- Shop runtime config extracted into `config.js`
+- Rendering logic extracted into `main.js`
+- Deployment path documented in `DEPLOYMENT.md`
+- Shopify connection path documented in `SHOPIFY-INTEGRATION.md`
+- Cloudflare Pages path documented in `CLOUDFLARE-PAGES-NOTES.md`

@@ -67,6 +67,19 @@
           </div>
         </section>
 
+        <section class="section status-row">
+          <article class="card status-card">
+            <p class="eyebrow">PHASE 2 STATUS</p>
+            <h3 data-shop-status>Loading shop status…</h3>
+            <p>Produktdaten sind jetzt in einer eigenen Katalog-Schicht ausgelagert. Shopify ist als nächster echter Commerce-Step vorbereitet, aber noch nicht live verdrahtet.</p>
+          </article>
+          <article class="card status-card">
+            <p class="eyebrow">TARGET URL</p>
+            <h3 data-preferred-url>https://grip.bomiko.de</h3>
+            <p>Fallback / redirect candidate: <span data-fallback-url>https://gripstrengthshop.bomiko.de</span></p>
+          </article>
+        </section>
+
         <section class="section three-up" id="paths">
           <article class="card">
             <p class="eyebrow">PATH 01</p>
@@ -91,31 +104,9 @@
               <p class="eyebrow">CURATED CATALOG</p>
               <h2>Small catalog. Serious tools.</h2>
             </div>
-            <p class="muted">The first version stays intentionally narrow: one hero tool, one wrist tool, one carry accessory and two goal-based bundles.</p>
+            <p class="muted">Der Shop ist jetzt nicht mehr rein hardcodiert: Produkte werden über eine eigene Katalog-Datei gerendert und können danach an Shopify Collections oder Storefront-Daten angeschlossen werden.</p>
           </div>
-          <div class="product-grid">
-            <article class="product-card card">
-              <div class="product-badge">Hero</div>
-              <h3>Adjustable Grip Press</h3>
-              <p>Progressive grip trainer with visible resistance ladder and machined-metal feel.</p>
-              <div class="price-row"><strong>CHF 69</strong><span>Flagship</span></div>
-              <button class="btn btn-primary btn-block">View product</button>
-            </article>
-            <article class="product-card card">
-              <div class="product-badge">Accessory</div>
-              <h3>Wrist Roller Pro</h3>
-              <p>Forearm endurance and structural wrist work in a minimal portable format.</p>
-              <div class="price-row"><strong>CHF 49</strong><span>Forearm builder</span></div>
-              <button class="btn btn-secondary btn-block">View product</button>
-            </article>
-            <article class="product-card card">
-              <div class="product-badge">Carry</div>
-              <h3>Grip Block Carry</h3>
-              <p>Pinch and support-grip training for lifters, grapplers and climbers.</p>
-              <div class="price-row"><strong>CHF 39</strong><span>Compact tool</span></div>
-              <button class="btn btn-secondary btn-block">View product</button>
-            </article>
-          </div>
+          <div class="product-grid" data-products></div>
         </section>
 
         <section class="section" id="bundles">
@@ -125,26 +116,7 @@
               <h2>Buy by goal, not by confusion.</h2>
             </div>
           </div>
-          <div class="bundle-grid">
-            <article class="card bundle">
-              <span class="tier">STARTER</span>
-              <h3>Strength Kit</h3>
-              <p>Grip Press + baseline protocol PDF</p>
-              <strong>CHF 79</strong>
-            </article>
-            <article class="card bundle featured">
-              <span class="tier">MOST LIKELY</span>
-              <h3>Combat Grip Kit</h3>
-              <p>Grip Press + Wrist Roller Pro + training protocol</p>
-              <strong>CHF 109</strong>
-            </article>
-            <article class="card bundle">
-              <span class="tier">ELITE</span>
-              <h3>Resilience Kit</h3>
-              <p>All tools + progression ladder + recovery guidance</p>
-              <strong>CHF 139</strong>
-            </article>
-          </div>
+          <div class="bundle-grid" data-bundles></div>
         </section>
 
         <section class="section steps" id="how-it-works">
@@ -176,29 +148,55 @@
           </blockquote>
         </section>
 
+        <section class="section" id="contact">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">NEXT COMMERCE LAYER</p>
+              <h2>What happens next</h2>
+            </div>
+          </div>
+          <div class="three-up">
+            <article class="card">
+              <h3>Shopify data bridge</h3>
+              <p>Bind the storefront to the Shopify collection tag <code>shop:gripstrength</code> via Storefront API or buy-button checkout links.</p>
+            </article>
+            <article class="card">
+              <h3>Cloudflare Pages deploy</h3>
+              <p>Deploy the repo as a static site and attach <code>grip.bomiko.de</code> once DNS is moved off the parked Hostinger setup.</p>
+            </article>
+            <article class="card">
+              <h3>Conversion polish</h3>
+              <p>Add real product imagery, level quiz, review proof and bundle logic once the product source is confirmed.</p>
+            </article>
+          </div>
+        </section>
+
         <section class="section faq" id="faq">
           <div class="section-head">
             <div>
               <p class="eyebrow">FAQ</p>
-              <h2>What this first version still needs</h2>
+              <h2>Current blockers and solutions</h2>
             </div>
           </div>
           <div class="faq-list">
             <details class="card" open>
               <summary>Is this already connected to Shopify?</summary>
-              <p>Not yet. The frontend is ready as a premium microsite shell. Next step is wiring it to the Shopify Storefront API or Buy Button/checkout flow once the API access is stabilized.</p>
+              <p>Not yet. Phase 2 creates the data/config structure so the page can be wired cleanly once Shopify API access is stabilized. The target collection remains <code>shop:gripstrength</code>.</p>
             </details>
             <details class="card">
               <summary>Can this go live on gripstrengthshop.bomiko.de?</summary>
               <p>Yes — after DNS for <code>bomiko.de</code> is moved from the parked Hostinger state into an active zone and a subdomain is pointed to Cloudflare Pages or a comparable static host.</p>
             </details>
             <details class="card">
-              <summary>Why start with GripStrength?</summary>
-              <p>It is a narrow niche with strong differentiation, high design leverage and a curated-catalog advantage over broad “sports shops”.</p>
+              <summary>What is the current hard blocker?</summary>
+              <p>The frontend is ready. The real blockers are infrastructure, not design: <code>bomiko.de</code> is parked and the Shopify API path still needs a stable access/auth route.</p>
             </details>
           </div>
         </section>
       </main>
     </div>
+    <script src="./config.js"></script>
+    <script src="./catalog.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>
